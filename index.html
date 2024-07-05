@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- head section started -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WPPOOL Index</title>
+    <!-- font awesome kit -->
+    <script
+      src="https://kit.fontawesome.com/2d75d29621.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- tailwind css cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <!-- head section ended -->
+  <!-- body section started -->
+  <body>
+    <!-- header section started -->
+    <div id="header"></div>
+    
+    <!-- main section started -->
+    <main>
+      <h2 class="text-3xl">This is main section</h2>
+    </main>
+
+    <!-- footer section started -->
+    <div id="footer"></div>
+
+    <!-- js to load html sections -->
+    <script>
+      function loadHTML(elementId, url) {
+          fetch(url)
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById(elementId).innerHTML = data;
+              })
+              .catch(error => console.error('Error loading HTML:', error));
+      }
+
+      loadHTML('header', '/src/header.html');
+      loadHTML('footer', '/src/footer.html');
+  </script>
+  </body>
+  <!-- body section ended -->
+</html>
